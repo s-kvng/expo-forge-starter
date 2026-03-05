@@ -12,8 +12,8 @@ export function HintRow({ title = 'Try editing', hint = 'app/index.tsx' }: HintR
   return (
     <View className="flex-row justify-between">
       <AppText className="text-sm font-medium">{title}</AppText>
-      <View className="bg-background-selected rounded-lg py-0.5 px-2">
-        <AppText className="text-secondary">
+      <View className="dark:bg-gray-600 bg-gray-300 rounded-lg py-0.5 px-2">
+        <AppText className="text-foreground">
           {hint}
         </AppText>
       </View>

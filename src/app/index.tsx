@@ -49,15 +49,15 @@ export default function HomeScreen() {
           <Text className="text-red-500">Hello World</Text>
         </View>
 
-        <AppText className="font-mono text-xs font-medium uppercase">
+        <AppText className="font-mono text-xs font-medium uppercase text-foreground">
           get started
         </AppText>
 
-        <View className="self-stretch rounded-3xl bg-background-element px-4 py-6 gap-4">
+        <View className="self-stretch rounded-3xl bg-background px-4 py-6 gap-4">
           <HintRow
             title="Try editing"
             hint={
-              <AppText className="font-mono text-xs font-medium">
+              <AppText className="font-mono text-xs font-medium text-foreground">
                 src/app/index.tsx
               </AppText>
             }
@@ -66,7 +66,7 @@ export default function HomeScreen() {
           <HintRow
             title="Fresh start"
             hint={
-              <AppText className="font-mono text-xs font-medium">
+              <AppText className="font-mono text-xs font-medium text-foreground">
                 npm run reset-project
               </AppText>
             }

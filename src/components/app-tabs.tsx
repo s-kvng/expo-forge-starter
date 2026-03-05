@@ -28,6 +28,11 @@ export default function AppTabs() {
           renderingMode="template"
         />
       </NativeTabs.Trigger>
+
+      <NativeTabs.Trigger name="theme">
+        <NativeTabs.Trigger.Label>Theme</NativeTabs.Trigger.Label>
+        <NativeTabs.Trigger.Icon sf={{ default: "circle", selected: "circle.fill" }} md='circle' />
+      </NativeTabs.Trigger>
     </NativeTabs>
   );
 }
