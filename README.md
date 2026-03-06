@@ -1,56 +1,97 @@
-# Welcome to your Expo app 👋
+# Expo Forge Starter
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+TypeScript-first Expo + Expo Router + Uniwind starter focused on speed, clarity, and good defaults. Ships with theming, opinionated project structure, utility helpers, and ready-made screens.
 
-## Get started
+> **Branches:** The `default` branch is Expo Go-compatible. The `main` branch includes additional batteries — auth with Clerk, backend with Convex, and more.
 
-1. Install dependencies
+## Tech Stack
 
-   ```bash
-   npm install
-   ```
+| Category | Tool |
+|---|---|
+| Framework | [Expo](https://expo.dev) (SDK 55) + React Native 0.83 |
+| Routing | [Expo Router](https://docs.expo.dev/router/introduction/) (file-based, typed routes) |
+| Styling | [Uniwind](https://uniwind.dev) (Tailwind CSS v4 for React Native) |
+| State | [Zustand](https://zustand.docs.pmnd.rs/) with persist middleware |
+| Fonts | Poppins (Regular, Medium, SemiBold, Bold) via `expo-font` |
+| Tabs | Native Tabs (`expo-router/unstable-native-tabs`) with web fallback |
+| Storage | `expo-sqlite/kv-store` (native) / localStorage (web) |
 
-2. Start the app
+## Features
 
-   ```bash
-   npx expo start
-   ```
+- **Light & dark theming** — OKLCH color tokens in `global.css`, automatic system theme detection
+- **Native tab bar** — Platform-native tabs on iOS/Android with SF Symbols and Material icons, web fallback
+- **Unified storage** — Single adapter for Zustand persistence across native and web
+- **`cn()` utility** — Tailwind class merging via `clsx` + `tailwind-merge`
+- **Custom `AppText`** — Drop-in text component with Poppins font family
+- **React Compiler** — Enabled via `reactCompiler: true` experiment
+- **Typed routes** — Full type safety for navigation
 
-In the output, you'll find options to open the app in a
+## Project Structure
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+src/
+  app/             Route pages & layouts (_layout.tsx, index.tsx, explore.tsx, theme.tsx)
+  components/      UI components (shared/, ui/, common/)
+  constants/       Theme colors, fonts, spacing, tab config
+  hooks/           Custom hooks (color scheme, large header options)
+  helpers/         Helper functions & hooks (accessibility, OTA updates, strings)
+  lib/             Utilities (cn(), unified storage adapter)
+  store/           Zustand store (auth, theme, profile, preferences)
+  services/        API & integrations
+  interfaces/      TypeScript interfaces by domain
+  types/           Type definitions
+  global.css       Tailwind/Uniwind theme config
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Get Started
 
-### Other setup steps
+1. **Clone the repo**
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+   ```bash
+   git clone https://github.com/s-kvng/expo-forge-starter.git
+   cd expo-forge-starter
+   ```
 
-## Learn more
+2. **Install dependencies**
 
-To learn more about developing your project with Expo, look at the following resources:
+   ```bash
+   bun install   # or: npm install / yarn / pnpm
+   ```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+3. **Start the dev server**
 
-## Join the community
+   ```bash
+   bun expo start
+   ```
 
-Join our community of developers creating universal apps.
+   From there you can open the app in:
+   - [Expo Go](https://expo.dev/go) (default branch)
+   - [iOS Simulator](https://docs.expo.dev/workflow/ios-simulator/)
+   - [Android Emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+   - [Development build](https://docs.expo.dev/develop/development-builds/introduction/)
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+4. **Start editing** — Routes live in `src/app/`. The project uses [file-based routing](https://docs.expo.dev/router/introduction).
+
+## Scripts
+
+| Command | Description |
+|---|---|
+| `bun expo start` | Start the dev server |
+| `bun expo start --ios` | Start on iOS simulator |
+| `bun expo start --android` | Start on Android emulator |
+| `bun expo start --web` | Start on web |
+| `bun expo lint` | Run ESLint |
+| `bun run reset-project` | Reset to a blank project |
+
+## Learn More
+
+- [Expo docs](https://docs.expo.dev/) — Fundamentals and advanced guides
+- [Expo Router docs](https://docs.expo.dev/router/introduction/) — File-based routing
+- [Uniwind docs](https://uniwind.dev) — Tailwind CSS v4 for React Native
+- [Zustand docs](https://zustand.docs.pmnd.rs/) — Lightweight state management
+- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/) — Step-by-step walkthrough
+
+## Community
+
+- [Expo on GitHub](https://github.com/expo/expo)
+- [Expo Discord](https://chat.expo.dev)

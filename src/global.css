@@ -2,11 +2,25 @@
 @import 'uniwind';
 
 
+@theme {
+  /* Other values */
+  /* ... */
+
+  /* Font families */
+  --font-sans: 'Poppins-Regular';
+  --font-sans-medium: 'Poppins-Medium';
+  --font-sans-bold: 'Poppins-Bold';
+  --font-mono: 'Poppins-SemiBold';
+}
+
 @layer theme {
   @variant light {
     /* Override default colors */
     --accent: oklch(0.7324 0.1649 55.36); /* Custom indigo accent */
     --success: oklch(0.65 0.15 155);
+
+    --color-background: oklch(1 0 0);
+    --color-foreground: oklch(21.03% 0.0059 305.00);
 
   }
 
@@ -14,6 +28,9 @@
     /* Override dark theme colors */
     --accent: oklch(0.7324 0.1649 55.36);
     --success: oklch(0.75 0.12 155);
+
+    --color-background: oklch(0.1316 0.0041 17.69);
+    --color-foreground: oklch(0.7324 0.1649 55.36);
 
   }
 }

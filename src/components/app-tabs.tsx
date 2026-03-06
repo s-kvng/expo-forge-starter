@@ -1,8 +1,8 @@
 import { NativeTabs } from 'expo-router/unstable-native-tabs';
-import React from 'react';
+import * as Haptics from 'expo-haptics';
 import { useColorScheme } from 'react-native';
 
-import { Colors } from '@/constants/theme';
+import { Colors, TABS } from '@/constants';
 
 export default function AppTabs() {
   const scheme = useColorScheme();
@@ -12,7 +12,30 @@ export default function AppTabs() {
     <NativeTabs
       backgroundColor={colors.background}
       indicatorColor={colors.backgroundElement}
-      labelStyle={{ selected: { color: colors.text } }}>
+      labelStyle={{ selected: { color: colors.text } }}
+      screenListeners={{
+        tabPress: () => {
+          Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+        },
+      }}
+    >
+      {TABS.map((tab) => (
+        <NativeTabs.Trigger key={tab.name} name={tab.name}>
+          <NativeTabs.Trigger.Label>{tab.label}</NativeTabs.Trigger.Label>
+          <NativeTabs.Trigger.Icon
+            sf={{ default: tab.icon.sf, selected: tab.icon.selected }}
+            md={tab.icon.md}
+          />
+        </NativeTabs.Trigger>
+      ))}
+    </NativeTabs>
+  );
+}
+
+
+/*
+Note: If you want to use an image for the tab icon, you can use the following code:
+
       <NativeTabs.Trigger name="index">
         <NativeTabs.Trigger.Label>Home</NativeTabs.Trigger.Label>
         <NativeTabs.Trigger.Icon
@@ -21,13 +44,4 @@ export default function AppTabs() {
         />
       </NativeTabs.Trigger>
 
-      <NativeTabs.Trigger name="explore">
-        <NativeTabs.Trigger.Label>Explore</NativeTabs.Trigger.Label>
-        <NativeTabs.Trigger.Icon
-          src={require('@/assets/images/tabIcons/explore.png')}
-          renderingMode="template"
-        />
-      </NativeTabs.Trigger>
-    </NativeTabs>
-  );
-}
+*/
