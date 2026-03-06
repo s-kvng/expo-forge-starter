@@ -1,19 +1,28 @@
-# Welcome to your Expo app 👋
+# Expo Forge Starter or You Can Call It Expo Starter Kit
+#### This is for the default branch(expo go supported), the main branch has more batteries like auth with clerk , backend set with convex and more...
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+TypeScript-first Expo + expo-router + uniwind starter focused on speed, clarity, and good defaults. It includes a small utility helpers, theming functionality with uniwind, opinionated structure, and ready-made screens.
+
 
 ## Get started
 
-1. Install dependencies
+1. Clone and install
 
    ```bash
-   npm install
+   git clone <your-repo-url>
+   cd expo-forge-starter
+   ```
+
+2. Install dependencies
+
+   ```bash
+   bun install   # or: npm install / yarn install / pnpm install
    ```
 
 2. Start the app
 
    ```bash
-   npx expo start
+   bun expo start
    ```
 
 In the output, you'll find options to open the app in a
@@ -25,19 +34,9 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
 ### Other setup steps
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
+- To set up ESLint for linting, run `bun expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
 - If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
 - Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
 
