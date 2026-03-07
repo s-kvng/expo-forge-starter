@@ -1,3 +1,13 @@
+/**
+ * Global app store using Zustand with persistence.
+ *
+ * This is an example store with common slices (auth, theme, profile, preferences).
+ * Customize it for your app:
+ * - Replace or remove slices you don't need (e.g. AuthSlice, ProfileLocalSlice)
+ * - Add your own slices for app-specific state
+ * - Adjust `partialize` to control which state is persisted across app restarts
+ * - Change the store `name` from 'sample-app-store-v1' to your app's name
+ */
 import { create } from 'zustand';
 import { devtools, persist, createJSONStorage } from 'zustand/middleware';
 import { zustandJSONStorage } from '@/lib/storage/unified-storage';

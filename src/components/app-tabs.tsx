@@ -1,3 +1,12 @@
+/**
+ * Native tab bar for iOS and Android using expo-router's NativeTabs.
+ * Renders platform-native tab bars with SF Symbols (iOS) and Material icons (Android).
+ *
+ * Tab configuration is driven by the TABS array in src/constants/tabs.ts.
+ * The web version of this component is in app-tabs.web.tsx (Expo platform extension).
+ *
+ * To customize: edit TABS in constants/tabs.ts to add/remove/reorder tabs.
+ */
 import { NativeTabs } from 'expo-router/unstable-native-tabs';
 import * as Haptics from 'expo-haptics';
 import { useColorScheme } from 'react-native';
