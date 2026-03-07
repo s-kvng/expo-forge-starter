@@ -1,6 +1,21 @@
 @import 'tailwindcss';
 @import 'uniwind';
 
+@import 'heroui-native/styles';
+
+
+@import './themes/lavander.css';
+@import './themes/mint.css';
+@import './themes/sky.css';
+
+
+/* Path to the heroui-native lib inside node_modules relative to global.css */
+/* Examples:
+ *   - If global.css is at project root: ./node_modules/heroui-native/lib
+ *   - If global.css is in app/: ../node_modules/heroui-native/lib
+ *   - If global.css is in src/styles/: ../../node_modules/heroui-native/lib
+ */
+@source '../node_modules/heroui-native/lib';
 
 @theme {
   /* Other values */
@@ -19,8 +34,12 @@
     --accent: oklch(0.7324 0.1649 55.36); /* Custom indigo accent */
     --success: oklch(0.65 0.15 155);
 
-    --color-background: oklch(1 0 0);
-    --color-foreground: oklch(21.03% 0.0059 305.00);
+    --font-normal: 'Inter-Regular';
+    --font-medium: 'Inter-Medium';
+    --font-semibold: 'Inter-SemiBold';
+    --font-bold: 'Inter-Bold';
+    
+    --radius: 0.5rem;
 
   }
 
@@ -29,8 +48,12 @@
     --accent: oklch(0.7324 0.1649 55.36);
     --success: oklch(0.75 0.12 155);
 
-    --color-background: oklch(0.1316 0.0041 17.69);
-    --color-foreground: oklch(0.7324 0.1649 55.36);
+    --font-normal: 'Inter-Regular';
+    --font-medium: 'Inter-Medium';
+    --font-semibold: 'Inter-SemiBold';
+    --font-bold: 'Inter-Bold';
+    
+    --radius: 0.5rem;
 
   }
 }

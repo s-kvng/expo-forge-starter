@@ -10,5 +10,13 @@ module.exports = withUniwindConfig(config, {
   cssEntryFile: './src/global.css',
   // (optional) path where we gonna auto-generate typings
   // defaults to project's root
-  dtsFile: './src/uniwind-types.d.ts'
+  dtsFile: './src/uniwind-types.d.ts',
+  extraThemes: [
+    'lavender-light',
+    'lavender-dark',
+    'mint-light',
+    'mint-dark',
+    'sky-light',
+    'sky-dark',
+  ],
 });
