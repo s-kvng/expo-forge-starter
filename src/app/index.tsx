@@ -1,5 +1,9 @@
+/**
+ * Home screen — the landing page of the starter template.
+ * Replace this with your app's main screen.
+ */
 import * as Device from 'expo-device';
-import { Platform, Text, View } from 'react-native';
+import { Platform, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { AnimatedIcon } from '@/components/animated-icon';
@@ -44,9 +48,11 @@ export default function HomeScreen() {
         <View className="flex-1 items-center justify-center gap-6 px-6">
           <AnimatedIcon />
           <AppText className="text-center text-5xl font-semibold leading-[52px]">
-            Welcome to&nbsp;Expo
+            Expo Forge{'\n'}Starter
           </AppText>
-          <Text className="text-red-500">Hello World</Text>
+          <AppText className="text-center text-sm text-foreground/70">
+            A batteries-included Expo template with{'\n'}theming, HeroUI Native, and Zustand
+          </AppText>
         </View>
 
         <AppText className="font-mono text-xs font-medium uppercase text-foreground">
@@ -55,7 +61,7 @@ export default function HomeScreen() {
 
         <View className="self-stretch rounded-3xl bg-background px-4 py-6 gap-4">
           <HintRow
-            title="Try editing"
+            title="Edit this screen"
             hint={
               <AppText className="font-mono text-xs font-medium text-foreground">
                 src/app/index.tsx
@@ -64,10 +70,18 @@ export default function HomeScreen() {
           />
           <HintRow title="Dev tools" hint={getDevMenuHint()} />
           <HintRow
+            title="Switch themes"
+            hint={
+              <AppText className="font-mono text-xs font-medium text-foreground">
+                Theme tab
+              </AppText>
+            }
+          />
+          <HintRow
             title="Fresh start"
             hint={
               <AppText className="font-mono text-xs font-medium text-foreground">
-                npm run reset-project
+                bun run reset-project
               </AppText>
             }
           />

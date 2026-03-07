@@ -1,3 +1,18 @@
+/*
+ * Lavender color theme — use this file as a template for creating your own themes.
+ *
+ * Each theme defines a light and dark variant with the full set of CSS variables.
+ * All variables must be defined in both variants to avoid missing values at runtime.
+ *
+ * Steps to create a new theme (e.g. "coral"):
+ *   1. Copy this file to src/themes/coral.css
+ *   2. Rename @variant lavender-light → @variant coral-light (and same for dark)
+ *   3. Adjust all color values to your palette
+ *   4. Import it in src/global.css: @import './themes/coral.css';
+ *   5. Register in metro.config.js extraThemes: ['coral-light', 'coral-dark']
+ *   6. Add 'coral-light' | 'coral-dark' to ThemeName in src/context/app-theme-context.tsx
+ *   7. Add toggle cases in AppThemeProvider.toggleTheme()
+ */
 @layer theme {
   :root {
     @variant lavender-light {

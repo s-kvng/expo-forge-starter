@@ -1,4 +1,11 @@
-// A small adapter for createJSONStorage that works on web and Expo (AsyncStorage).
+/**
+ * Unified storage adapter for Zustand's createJSONStorage.
+ * Uses localStorage on web and expo-sqlite/kv-store on native.
+ *
+ * This is used by the Zustand store for persistence. If you need to swap
+ * the native storage backend (e.g. to MMKV for performance), replace the
+ * AsyncStorage calls below.
+ */
 import { Platform } from 'react-native';
 import AsyncStorage from 'expo-sqlite/kv-store';
 

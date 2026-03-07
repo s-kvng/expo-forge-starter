@@ -1,6 +1,6 @@
 # Expo Forge Starter
 
-TypeScript-first Expo + Expo Router + Uniwind starter focused on speed, clarity, and good defaults. Ships with theming, opinionated project structure, utility helpers, and ready-made screens.
+TypeScript-first Expo + Expo Router + Uniwind + HeroUI Native starter focused on speed, clarity, and good defaults. Ships with multi-theme support, an opinionated project structure, utility helpers, and ready-made screens.
 
 > **Branches:** The `default` branch is Expo Go-compatible. The `main` branch includes additional batteries — auth with Clerk, backend with Convex, and more.
 
@@ -10,17 +10,23 @@ TypeScript-first Expo + Expo Router + Uniwind starter focused on speed, clarity,
 |---|---|
 | Framework | [Expo](https://expo.dev) (SDK 55) + React Native 0.83 |
 | Routing | [Expo Router](https://docs.expo.dev/router/introduction/) (file-based, typed routes) |
-| Styling | [Uniwind](https://uniwind.dev) (Tailwind CSS v4 for React Native) |
+| UI Components | [HeroUI Native](https://heroui.com/native) |
+| Styling | [Uniwind](https://uniwind.dev) (Tailwind CSS v4) + [Tailwind Variants](https://www.tailwind-variants.org/) |
 | State | [Zustand](https://zustand.docs.pmnd.rs/) with persist middleware |
-| Fonts | Poppins (Regular, Medium, SemiBold, Bold) via `expo-font` |
+| Keyboard | [react-native-keyboard-controller](https://kirurupa.github.io/react-native-keyboard-controller/) |
+| Bottom Sheets | [@gorhom/bottom-sheet](https://gorhom.dev/react-native-bottom-sheet/) |
+| Fonts | Poppins + Inter via `expo-font` |
 | Tabs | Native Tabs (`expo-router/unstable-native-tabs`) with web fallback |
 | Storage | `expo-sqlite/kv-store` (native) / localStorage (web) |
 
 ## Features
 
-- **Light & dark theming** — OKLCH color tokens in `global.css`, automatic system theme detection
+- **Multi-theme system** — Base light/dark plus color themes (lavender, mint, sky) with light/dark variants each, all using OKLCH color tokens
+- **HeroUI Native components** — Pre-configured provider with toast support and keyboard avoidance
 - **Native tab bar** — Platform-native tabs on iOS/Android with SF Symbols and Material icons, web fallback
+- **Theme switching** — `useAppTheme()` hook with `setTheme()` and `toggleTheme()` via `Uniwind.setTheme()`
 - **Unified storage** — Single adapter for Zustand persistence across native and web
+- **Bottom sheets** — `@gorhom/bottom-sheet` with blur backdrop support (`expo-blur`)
 - **`cn()` utility** — Tailwind class merging via `clsx` + `tailwind-merge`
 - **Custom `AppText`** — Drop-in text component with Poppins font family
 - **React Compiler** — Enabled via `reactCompiler: true` experiment
@@ -30,17 +36,20 @@ TypeScript-first Expo + Expo Router + Uniwind starter focused on speed, clarity,
 
 ```
 src/
-  app/             Route pages & layouts (_layout.tsx, index.tsx, explore.tsx, theme.tsx)
-  components/      UI components (shared/, ui/, common/)
+  app/             Route pages & layouts (theme/ has its own Stack layout)
+  components/      UI components (shared/, ui/, icons/, examples/)
   constants/       Theme colors, fonts, spacing, tab config
+  context/         React contexts (AppThemeContext for multi-theme)
+  providers/       Provider composition (RootProvider)
   hooks/           Custom hooks (color scheme, large header options)
   helpers/         Helper functions & hooks (accessibility, OTA updates, strings)
   lib/             Utilities (cn(), unified storage adapter)
   store/           Zustand store (auth, theme, profile, preferences)
   services/        API & integrations
+  themes/          CSS theme files (lavender, mint, sky, alpha)
   interfaces/      TypeScript interfaces by domain
   types/           Type definitions
-  global.css       Tailwind/Uniwind theme config
+  global.css       Tailwind/Uniwind/HeroUI Native theme config
 ```
 
 ## Get Started
@@ -87,6 +96,7 @@ src/
 
 - [Expo docs](https://docs.expo.dev/) — Fundamentals and advanced guides
 - [Expo Router docs](https://docs.expo.dev/router/introduction/) — File-based routing
+- [HeroUI Native docs](https://v3.heroui.com/docs/native/getting-started) — React Native component library
 - [Uniwind docs](https://uniwind.dev) — Tailwind CSS v4 for React Native
 - [Zustand docs](https://zustand.docs.pmnd.rs/) — Lightweight state management
 - [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/) — Step-by-step walkthrough
@@ -95,3 +105,11 @@ src/
 
 - [Expo on GitHub](https://github.com/expo/expo)
 - [Expo Discord](https://chat.expo.dev)
+
+## Inspired By ❤️
+
+This starter was built on the shoulders of:
+
+- [HeroUI Native Example](https://github.com/heroui-inc/heroui-native-example) — Reference app for HeroUI Native components and theming patterns
+- [Sonny's Expo Starter](https://github.com/sonnysangha) — Project structure and developer experience inspiration
+- [Expo Default Template](https://docs.expo.dev/) — The official Expo template that serves as the foundation

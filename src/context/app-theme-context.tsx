@@ -1,6 +1,16 @@
 import React, { createContext, useCallback, useContext, useMemo } from 'react';
 import { Uniwind, useUniwind } from 'uniwind';
 
+/**
+ * All available theme variants. Each custom theme needs a light and dark variant.
+ *
+ * To add your own theme:
+ *   1. Create a CSS file in src/themes/ (copy an existing one as a template)
+ *   2. Import it in src/global.css
+ *   3. Register both variants in metro.config.js `extraThemes`
+ *   4. Add the variant names to this union type
+ *   5. Add the toggle cases in `toggleTheme` below
+ */
 type ThemeName =
   | 'light'
   | 'dark'
@@ -23,6 +33,10 @@ const AppThemeContext = createContext<AppThemeContextType | undefined>(
   undefined
 );
 
+/**
+ * Provides theme state and switching to the entire app.
+ * Wraps Uniwind's theme system with convenience helpers (isLight, isDark, toggleTheme).
+ */
 export const AppThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
@@ -40,6 +54,7 @@ export const AppThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     Uniwind.setTheme(newTheme);
   }, []);
 
+  /** Toggles between light/dark within the current color theme. Add cases here for new themes. */
   const toggleTheme = useCallback(() => {
     switch (theme) {
       case 'light':
@@ -87,6 +102,7 @@ export const AppThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   );
 };
 
+/** Access theme state anywhere in the app. Must be used within AppThemeProvider. */
 export const useAppTheme = () => {
   const context = useContext(AppThemeContext);
   if (!context) {

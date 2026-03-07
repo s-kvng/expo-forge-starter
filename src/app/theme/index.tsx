@@ -1,3 +1,11 @@
+/**
+ * Theme showcase screen — demonstrates multi-theme switching with HeroUI Native components.
+ *
+ * This is an example screen. You can:
+ * - Remove it entirely if your app doesn't need a theme picker
+ * - Use it as reference for how to integrate useAppTheme() and theme selection UI
+ * - Extend availableThemes below when you add new color themes
+ */
 import { useHeaderHeight } from '@react-navigation/elements';
 import * as Haptics from 'expo-haptics';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -18,6 +26,7 @@ type ThemeOption = {
   darkVariant: string;
 };
 
+/** Add your custom themes here. Each needs an id, display name, and both light/dark variant names. */
 const availableThemes: ThemeOption[] = [
   {
     id: 'default',
@@ -45,9 +54,7 @@ const availableThemes: ThemeOption[] = [
   },
 ];
 
-/**
- * Gradient color mapping for each theme
- */
+/** Gradient colors for the theme picker circles. Add an entry for each custom theme. */
 const themeGradients = {
   default: ['#5DA2E7', '#0900FF'] as [string, string],
   lavender: ['#EF84F6', '#7B00FF'] as [string, string],
