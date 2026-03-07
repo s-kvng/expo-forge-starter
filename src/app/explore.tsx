@@ -44,7 +44,7 @@ export default function ExploreScreen() {
         <View className="gap-4 items-center px-6 py-16">
           <AppText className="text-3xl font-semibold leading-[44px] text-foreground">Explore</AppText>
           <AppText className="text-center text-foreground">
-            What's included in this starter{'\n'}and how to make it yours.
+            What&apos;s included in this starter{'\n'}and how to make it yours.
           </AppText>
 
           <ExternalLink href="https://docs.expo.dev" asChild>
@@ -130,7 +130,7 @@ export default function ExploreScreen() {
               and localStorage on web.
             </AppText>
             <AppText className="text-sm font-medium text-foreground">
-              Replace or remove the example slices to fit your app's needs.
+              Replace or remove the example slices to fit your app&apos;s needs.
             </AppText>
             <ExternalLink href="https://zustand.docs.pmnd.rs/">
               <AppText className="text-sm text-[#3c87f7] leading-[30px]">Zustand docs</AppText>
