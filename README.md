@@ -2,7 +2,7 @@
 
 TypeScript-first Expo + Expo Router + Uniwind + HeroUI Native starter focused on speed, clarity, and good defaults. Ships with multi-theme support, an opinionated project structure, utility helpers, and ready-made screens.
 
-> **Branches:** The `default` branch is Expo Go-compatible. The `main` branch includes additional batteries — auth with Clerk, backend with Convex, and more.
+> **Branches:** The `default` branch is Expo Go-compatible. The `main` branch includes additional batteries — auth with Clerk(coming soon), backend with Convex(coming soon), and more.
 
 ## Tech Stack
 
@@ -111,5 +111,5 @@ src/
 This starter was built on the shoulders of:
 
 - [HeroUI Native Example](https://github.com/heroui-inc/heroui-native-example) — Reference app for HeroUI Native components and theming patterns
-- [Sonny's Expo Starter](https://github.com/sonnysangha) — Project structure and developer experience inspiration
+- [Sonny's Expo Starter](https://github.com/Sonnysam/starter-template-expo) — Project structure and developer experience inspiration
 - [Expo Default Template](https://docs.expo.dev/) — The official Expo template that serves as the foundation
