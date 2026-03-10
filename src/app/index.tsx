@@ -23,14 +23,14 @@ function getDevMenuHint() {
   if (Device.isDevice) {
     return (
       <AppText className="text-sm font-medium">
-        shake device or press <AppText className="font-mono text-xs font-medium">m</AppText> in terminal
+        shake device or press <AppText className="font-mono text-xs">m</AppText> in terminal
       </AppText>
     );
   }
   const shortcut = Platform.OS === 'android' ? 'cmd+m (or ctrl+m)' : 'cmd+d';
   return (
     <AppText className="text-sm font-medium">
-      press <AppText className="font-mono text-xs font-medium">{shortcut}</AppText>
+      press <AppText className="font-mono text-xs">{shortcut}</AppText>
     </AppText>
   );
 }
@@ -55,7 +55,7 @@ export default function HomeScreen() {
           </AppText>
         </View>
 
-        <AppText className="font-mono text-xs font-medium uppercase text-foreground">
+        <AppText className="font-mono text-xs uppercase text-foreground">
           get started
         </AppText>
 
@@ -63,7 +63,7 @@ export default function HomeScreen() {
           <HintRow
             title="Edit this screen"
             hint={
-              <AppText className="font-mono text-xs font-medium text-foreground">
+              <AppText className="font-mono text-xs text-foreground">
                 src/app/index.tsx
               </AppText>
             }
@@ -72,7 +72,7 @@ export default function HomeScreen() {
           <HintRow
             title="Switch themes"
             hint={
-              <AppText className="font-mono text-xs font-medium text-foreground">
+              <AppText className="font-mono text-xs text-foreground">
                 Theme tab
               </AppText>
             }
@@ -80,7 +80,7 @@ export default function HomeScreen() {
           <HintRow
             title="Fresh start"
             hint={
-              <AppText className="font-mono text-xs font-medium text-foreground">
+              <AppText className="font-mono text-xs text-foreground">
                 bun run reset-project
               </AppText>
             }
